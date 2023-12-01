@@ -36,12 +36,8 @@ function find_integers(text_by_line: any) {
     for (var line of text_by_line) {
         var integers = Array.from(line.matchAll(/(?<=(\d|one|two|three|four|five|six|seven|eight|nine|zero))/g), (match: any) => match[1])
         var replaced_integers = replace_strings(integers);
-        console.log(integers)
-        console.log(replaced_integers)
         var first_plus_last = sum_first_and_last(replaced_integers)
-        console.log(first_plus_last)
         sum += +first_plus_last
-        console.log(sum)
     }
     console.log(sum)
 }
